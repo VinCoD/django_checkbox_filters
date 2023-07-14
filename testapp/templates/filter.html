@@ -1,0 +1,10 @@
+<form method="post" action="{% url 'filter_restaurants' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Filter</button>
+</form>
+
+{% for restaurant in restaurants %}
+    <!-- Display restaurant details -->
+  {{ restaurant.name}}
+{% endfor %}
